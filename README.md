@@ -35,8 +35,10 @@ URL obtenue : `https://<compte>.github.io/barometre-qr/`
 
 ## Points ouverts
 
-1. **Hébergement définitif** — GitHub Pages est un domaine tiers ; pour une sollicitation institutionnelle, un domaine `sciencespo.fr` (ou `sites.google.com/sciencespo.fr/…`) inspire davantage confiance et résiste mieux au réflexe « c'est du phishing ». À arbitrer avant l'impression.
-2. **Repli papier** — imprimer l'adresse en toutes lettres sur le support, sous le QR : si la page est inaccessible, le dispositif reste utilisable.
+1. **Hébergement — arbitré le 25/08 : on reste sur GitHub Pages**, qui s'est révélé parfaitement fonctionnel (HTTPS, disponibilité, mise à jour en trente secondes, historique versionné). Deux conditions, dans cet ordre d'importance :
+   - **Propriété du dépôt.** Il vit aujourd'hui sous un compte individuel : un QR imprimé sur des centaines de supports ne peut pas dépendre d'un compte personnel. Ajouter au minimum la chargée d'enquête en administratrice, ou transférer le dépôt à une organisation GitHub Sciences Po si elle existe.
+   - **Nom de domaine.** Si la DSI peut créer un sous-domaine `sciencespo.fr` pointant vers GitHub Pages (fichier `CNAME` à la racine), on obtient l'URL institutionnelle **sans rien changer au fonctionnement**. C'est la meilleure sortie : le confort de git, la crédibilité du domaine. À demander sans en faire un bloquant.
+2. **Repli papier (indispensable si l'URL reste `github.io`)** — imprimer l'adresse mail en toutes lettres sous le QR. Double effet : le dispositif survit à une page inaccessible, et l'étudiant qui se méfie d'une URL non institutionnelle peut faire la démarche sans passer par la page. C'est ce qui rend le choix `github.io` acceptable.
 3. **Mesure d'usage** — la page ne trace rien ; le volume réel se lit dans l'onglet `logs` du classeur de mapping.
 
 ## Prototype en ligne (25/08/2026)
