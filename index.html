@@ -80,8 +80,7 @@
           <code id="adr-fr">barometre.etudiant+lien@sciencespo.fr</code>
           <button type="button" class="copier" data-cible="adr-fr" data-libelle="Copier" data-fait="Copié ✓">Copier</button>
         </div>
-        <a class="bouton primaire" id="gmail-fr" href="#">Ouvrir dans Gmail</a>
-        <a class="bouton secondaire" id="mailto-fr" href="#">Ouvrir mon application mail</a>
+        <a class="bouton primaire" id="mailto-fr" href="#">Ouvrir mon application mail</a>
       </li>
       <li>
         <strong>Vous recevez votre lien dans la minute.</strong>
@@ -92,7 +91,7 @@
         22 questions, sur votre téléphone. L'enquête est ouverte jusqu'au 7 novembre 2026.
       </li>
     </ol>
-    <p class="alerte"><strong>Le mail doit partir de votre adresse @sciencespo.fr.</strong> Envoyé depuis une adresse personnelle, il ne recevra aucune réponse.</p>
+    <p class="alerte"><strong>Le mail doit partir de votre adresse @sciencespo.fr.</strong> Vérifiez l'expéditeur avant d'envoyer : depuis une adresse personnelle, vous ne recevrez aucune réponse.</p>
     <p class="pourquoi"><strong>Pourquoi ce détour ?</strong> Votre lien est unique : c'est lui qui permet de ne plus vous relancer une fois que vous avez répondu, et de ne jamais compter deux fois la même réponse. Il ne peut donc être ni publié, ni partagé — d'où cet envoi qui prouve que vous êtes bien vous.</p>
   </section>
 
@@ -105,8 +104,7 @@
           <code id="adr-en">barometre.etudiant+lien@sciencespo.fr</code>
           <button type="button" class="copier" data-cible="adr-en" data-libelle="Copy" data-fait="Copied ✓">Copy</button>
         </div>
-        <a class="bouton primaire" id="gmail-en" href="#">Open in Gmail</a>
-        <a class="bouton secondaire" id="mailto-en" href="#">Open my mail app</a>
+        <a class="bouton primaire" id="mailto-en" href="#">Open my mail app</a>
       </li>
       <li>
         <strong>You receive your link within a minute.</strong>
@@ -117,7 +115,7 @@
         22 questions, on your phone. The survey is open until 7 November 2026.
       </li>
     </ol>
-    <p class="alerte"><strong>The email must be sent from your @sciencespo.fr address.</strong> Sent from a personal address, it will get no reply.</p>
+    <p class="alerte"><strong>The email must be sent from your @sciencespo.fr address.</strong> Check the sender before sending: from a personal address, you will get no reply.</p>
     <p class="pourquoi"><strong>Why this step?</strong> Your link is unique: it is what stops the reminders once you have answered, and prevents any response being counted twice. It therefore cannot be published or shared — hence this email, which proves the address is yours.</p>
   </section>
 
@@ -134,20 +132,13 @@
   var SUJET_FR='Mon lien Baromètre';
   var SUJET_EN='My Barometer link';
 
-  // Gmail : /a/<domaine>/ force la sélection du compte Sciences Po si plusieurs comptes sont connectés.
-  // Le "+" doit être encodé (%2B) : dans un paramètre d'URL, un "+" brut vaudrait un espace.
-  function urlGmail(sujet){
-    return 'https://mail.google.com/a/'+DOMAINE+'/mail/?view=cm&fs=1&tf=1'
-         + '&to='+encodeURIComponent(ADRESSE)
-         + '&su='+encodeURIComponent(sujet);
-  }
-  // mailto : ici le "+" est littéral (il n'est pas dans la partie requête).
+  // mailto : le "+" est littéral (il n'est pas dans la partie requête).
+  // Retenu comme unique bouton après test terrain du 25/08 : ouvre l'application mail
+  // déjà configurée du téléphone, sans passage par le navigateur ni écran de connexion.
   function urlMailto(sujet){
     return 'mailto:'+ADRESSE+'?subject='+encodeURIComponent(sujet);
   }
 
-  document.getElementById('gmail-fr').href  = urlGmail(SUJET_FR);
-  document.getElementById('gmail-en').href  = urlGmail(SUJET_EN);
   document.getElementById('mailto-fr').href = urlMailto(SUJET_FR);
   document.getElementById('mailto-en').href = urlMailto(SUJET_EN);
 

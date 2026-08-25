@@ -6,14 +6,13 @@ Dispositif complet : livrable **L9** (`~/enquete_barometre/livrables/L9_qr_code_
 
 ## Ce que fait la page
 
-- **« Ouvrir dans Gmail »** → `https://mail.google.com/a/sciencespo.fr/mail/?view=cm&fs=1&tf=1&to=…&su=…`
-  Le segment `/a/sciencespo.fr/` **force le compte du domaine** si l'étudiant a plusieurs comptes Google connectés — c'est ce qui évite l'erreur la plus probable (envoyer depuis un Gmail personnel, et ne jamais recevoir de réponse). Sur mobile, ce lien ouvre l'application Gmail lorsqu'elle est installée ; sinon la version web.
-- **« Ouvrir mon application mail »** → `mailto:` classique (Apple Mail, Outlook, autre).
+- **« Ouvrir mon application mail »** → `mailto:` — **unique bouton d'action**. Il ouvre l'application mail déjà configurée sur le téléphone, sans passer par le navigateur ni par un écran de connexion.
+- *Écarté le 25/08 après test terrain : un bouton « Ouvrir dans Gmail »* (`https://mail.google.com/a/sciencespo.fr/mail/?view=cm&fs=1&tf=1&to=…&su=…`). Sur le papier il avait un avantage — le segment `/a/sciencespo.fr/` force le compte du domaine quand plusieurs comptes Google sont connectés. En pratique, le `mailto:` s'est révélé nettement plus fonctionnel sur les téléphones testés. Conséquence à assumer : **le choix du compte expéditeur repose désormais entièrement sur l'étudiant**, d'où l'avertissement renforcé sur la page (« vérifiez l'expéditeur avant d'envoyer »). À re-tester si le taux de rejets `rejected_external_domain` dans les logs s'avère élevé pendant la campagne.
 - **Bouton « Copier »** → presse-papiers, avec repli `execCommand` pour les contextes non sécurisés.
 - Bascule **FR / EN**, anglais par défaut si le navigateur n'est pas francophone.
 - **Aucun cookie, aucun script tiers, aucune requête sortante.** Un seul fichier, 12 Ko.
 
-Le `+` de l'adresse est encodé `%2B` dans l'URL Gmail (paramètre de requête) et laissé littéral dans le `mailto:` — c'est volontaire, l'inverse casse l'adresse.
+Dans le `mailto:`, le `+` de l'adresse est laissé littéral : il n'est pas dans la partie requête, l'encoder casserait l'adresse.
 
 ## Déploiement (GitHub Pages)
 
@@ -27,10 +26,10 @@ URL obtenue : `https://<compte>.github.io/barometre-qr/`
 
 ## À tester avant impression du QR
 
-- [ ] iOS + Gmail installé → le bouton Gmail ouvre l'app sur le bon compte
-- [ ] iOS sans Gmail → bouton mailto (Apple Mail) fonctionnel
-- [ ] Android + Gmail → idem
-- [ ] Étudiant avec **deux comptes Google** connectés → vérifie que `/a/sciencespo.fr/` sélectionne bien le compte institutionnel
+- [x] Test terrain 25/08 : le bouton `mailto:` est le plus fonctionnel → seul bouton conservé
+- [ ] iOS (Apple Mail) et iOS (Gmail par défaut) → le composeur s'ouvre bien prérempli
+- [ ] Android → idem
+- [ ] Étudiant avec **plusieurs comptes** → observer quel compte l'app propose par défaut (risque connu, couvert par l'avertissement)
 - [ ] Bouton Copier sur mobile (Safari et Chrome)
 - [ ] Lisibilité en plein soleil, à bout de bras
 
