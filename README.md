@@ -27,11 +27,11 @@ URL obtenue : `https://<compte>.github.io/barometre-qr/`
 ## À tester avant impression du QR
 
 - [x] Test terrain 25/08 : le bouton `mailto:` est le plus fonctionnel → seul bouton conservé
-- [ ] iOS (Apple Mail) et iOS (Gmail par défaut) → le composeur s'ouvre bien prérempli
-- [ ] Android → idem
-- [ ] Étudiant avec **plusieurs comptes** → observer quel compte l'app propose par défaut (risque connu, couvert par l'avertissement)
-- [ ] Bouton Copier sur mobile (Safari et Chrome)
-- [ ] Lisibilité en plein soleil, à bout de bras
+- [x] iOS (Apple Mail) et iOS (Gmail par défaut) → le composeur s'ouvre bien prérempli
+- [x] Android → idem
+- [x] Étudiant avec **plusieurs comptes** → observer quel compte l'app propose par défaut (risque connu, couvert par l'avertissement)
+- [x] Bouton Copier sur mobile (Safari et Chrome)
+- [x] Lisibilité en plein soleil, à bout de bras
 
 ## Points ouverts
 
