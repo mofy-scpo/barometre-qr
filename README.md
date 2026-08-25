@@ -45,4 +45,4 @@ URL obtenue : `https://<compte>.github.io/barometre-qr/`
 
 - **URL** : https://mofy-scpo.github.io/barometre-qr/
 - **QR** : `qr-barometre.png` (600 px, correction M) — pointe vers cette URL
-- Statut : **prototype de démonstration**. Hébergement définitif à rebasculer sur un domaine institutionnel (Google Sites `sites.google.com/sciencespo.fr/…` ou page `sciencespo.fr`) **avant impression** des supports : un QR institutionnel qui atterrit sur `github.io` se lit comme du phishing.
+- Statut : **validé pour la vague 2026** — parcours testé sur iOS et Android le 25/08, y compris en plein soleil et avec plusieurs comptes connectés. Hébergement maintenu sur GitHub Pages (cf. Points ouverts n° 1 pour les deux conditions : propriété du dépôt, et sous-domaine institutionnel si la DSI peut le fournir).
