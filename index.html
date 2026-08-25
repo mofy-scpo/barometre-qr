@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Baromètre étudiant 2026 — recevoir mon lien</title>
+<style>
+  :root{
+    --rouge:#E1001A; --texte:#1a1a1a; --gris:#666; --bord:#e3e3e3;
+    --fond:#ffffff; --encart:#f6f6f7; --ok:#0a7a3d;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --texte:#ececec; --gris:#a9a9a9; --bord:#3a3a3a; --fond:#141414; --encart:#1f1f21; --ok:#4ade80; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:24px 18px 56px; background:var(--fond); color:var(--texte);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.55; -webkit-text-size-adjust:100%;
+  }
+  main{max-width:34rem; margin:0 auto}
+  .marque{font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--rouge); font-weight:700; margin-bottom:6px}
+  h1{font-size:1.55rem; line-height:1.25; margin:0 0 4px}
+  .sous{color:var(--gris); margin:0 0 26px}
+  .langue{display:flex; gap:8px; margin-bottom:22px}
+  .langue button{
+    flex:0 0 auto; padding:7px 15px; border:1px solid var(--bord); background:transparent;
+    color:var(--gris); border-radius:999px; font:inherit; font-size:.85rem; cursor:pointer;
+  }
+  .langue button[aria-pressed="true"]{background:var(--texte); color:var(--fond); border-color:var(--texte); font-weight:600}
+  ol{padding-left:1.15rem; margin:0}
+  li{margin-bottom:26px}
+  li strong{display:block; margin-bottom:10px}
+  .encart{
+    display:flex; align-items:center; gap:10px; background:var(--encart);
+    border:1px solid var(--bord); border-radius:10px; padding:12px 14px; margin:12px 0 14px;
+  }
+  .encart code{
+    flex:1 1 auto; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.86rem; word-break:break-all; color:var(--texte); background:none;
+  }
+  .copier{
+    flex:0 0 auto; border:1px solid var(--bord); background:var(--fond); color:var(--texte);
+    border-radius:7px; padding:9px 13px; font:inherit; font-size:.85rem; cursor:pointer; white-space:nowrap;
+  }
+  .copier[data-ok="1"]{color:var(--ok); border-color:var(--ok)}
+  .bouton{
+    display:block; text-align:center; text-decoration:none; border-radius:8px;
+    padding:15px 18px; font-weight:700; font-size:1rem; margin-bottom:10px;
+  }
+  .primaire{background:var(--rouge); color:#fff}
+  .secondaire{background:transparent; color:var(--texte); border:1px solid var(--bord); font-weight:600}
+  .alerte{
+    border-left:3px solid var(--rouge); background:var(--encart);
+    padding:13px 15px; border-radius:0 8px 8px 0; margin:30px 0 22px; font-size:.95rem;
+  }
+  .pourquoi{font-size:.92rem; color:var(--gris)}
+  footer{margin-top:34px; padding-top:16px; border-top:1px solid var(--bord); font-size:.82rem; color:var(--gris)}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+<main>
+  <div class="marque">Sciences Po</div>
+  <h1>Baromètre étudiant 2026</h1>
+  <p class="sous" data-fr="Recevez votre lien personnel en une minute." data-en="Get your personal link in one minute.">Recevez votre lien personnel en une minute.</p>
+
+  <div class="langue" role="group" aria-label="Langue">
+    <button type="button" id="btn-fr" aria-pressed="true">Français</button>
+    <button type="button" id="btn-en" aria-pressed="false">English</button>
+  </div>
+
+  <!-- ══ FR ══ -->
+  <section id="fr">
+    <ol>
+      <li>
+        <strong>Envoyez un mail vide à cette adresse, depuis votre boîte Sciences Po.</strong>
+        <div class="encart">
+          <code id="adr-fr">barometre.etudiant+lien@sciencespo.fr</code>
+          <button type="button" class="copier" data-cible="adr-fr" data-libelle="Copier" data-fait="Copié ✓">Copier</button>
+        </div>
+        <a class="bouton primaire" id="gmail-fr" href="#">Ouvrir dans Gmail</a>
+        <a class="bouton secondaire" id="mailto-fr" href="#">Ouvrir mon application mail</a>
+      </li>
+      <li>
+        <strong>Vous recevez votre lien dans la minute.</strong>
+        Une réponse automatique vous renvoie le lien qui vous est propre.
+      </li>
+      <li>
+        <strong>Vous répondez en moins de 3 minutes.</strong>
+        22 questions, sur votre téléphone. L'enquête est ouverte jusqu'au 7 novembre 2026.
+      </li>
+    </ol>
+    <p class="alerte"><strong>Le mail doit partir de votre adresse @sciencespo.fr.</strong> Envoyé depuis une adresse personnelle, il ne recevra aucune réponse.</p>
+    <p class="pourquoi"><strong>Pourquoi ce détour ?</strong> Votre lien est unique : c'est lui qui permet de ne plus vous relancer une fois que vous avez répondu, et de ne jamais compter deux fois la même réponse. Il ne peut donc être ni publié, ni partagé — d'où cet envoi qui prouve que vous êtes bien vous.</p>
+  </section>
+
+  <!-- ══ EN ══ -->
+  <section id="en" hidden>
+    <ol>
+      <li>
+        <strong>Send an empty email to this address, from your Sciences Po account.</strong>
+        <div class="encart">
+          <code id="adr-en">barometre.etudiant+lien@sciencespo.fr</code>
+          <button type="button" class="copier" data-cible="adr-en" data-libelle="Copy" data-fait="Copied ✓">Copy</button>
+        </div>
+        <a class="bouton primaire" id="gmail-en" href="#">Open in Gmail</a>
+        <a class="bouton secondaire" id="mailto-en" href="#">Open my mail app</a>
+      </li>
+      <li>
+        <strong>You receive your link within a minute.</strong>
+        An automatic reply sends you your own personal link.
+      </li>
+      <li>
+        <strong>You answer in less than 3 minutes.</strong>
+        22 questions, on your phone. The survey is open until 7 November 2026.
+      </li>
+    </ol>
+    <p class="alerte"><strong>The email must be sent from your @sciencespo.fr address.</strong> Sent from a personal address, it will get no reply.</p>
+    <p class="pourquoi"><strong>Why this step?</strong> Your link is unique: it is what stops the reminders once you have answered, and prevents any response being counted twice. It therefore cannot be published or shared — hence this email, which proves the address is yours.</p>
+  </section>
+
+  <footer>
+    <span data-fr="Direction de la Scolarité et de la réussite étudiante — Sciences Po. Cette page ne dépose aucun cookie et ne collecte aucune donnée." data-en="Registrar's Office — Sciences Po. This page sets no cookies and collects no data.">Direction de la Scolarité et de la réussite étudiante — Sciences Po. Cette page ne dépose aucun cookie et ne collecte aucune donnée.</span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var LOCAL='barometre.etudiant+lien';
+  var DOMAINE='sciencespo.fr';
+  var ADRESSE=LOCAL+'@'+DOMAINE;
+  var SUJET_FR='Mon lien Baromètre';
+  var SUJET_EN='My Barometer link';
+
+  // Gmail : /a/<domaine>/ force la sélection du compte Sciences Po si plusieurs comptes sont connectés.
+  // Le "+" doit être encodé (%2B) : dans un paramètre d'URL, un "+" brut vaudrait un espace.
+  function urlGmail(sujet){
+    return 'https://mail.google.com/a/'+DOMAINE+'/mail/?view=cm&fs=1&tf=1'
+         + '&to='+encodeURIComponent(ADRESSE)
+         + '&su='+encodeURIComponent(sujet);
+  }
+  // mailto : ici le "+" est littéral (il n'est pas dans la partie requête).
+  function urlMailto(sujet){
+    return 'mailto:'+ADRESSE+'?subject='+encodeURIComponent(sujet);
+  }
+
+  document.getElementById('gmail-fr').href  = urlGmail(SUJET_FR);
+  document.getElementById('gmail-en').href  = urlGmail(SUJET_EN);
+  document.getElementById('mailto-fr').href = urlMailto(SUJET_FR);
+  document.getElementById('mailto-en').href = urlMailto(SUJET_EN);
+
+  // Copier — avec repli pour les navigateurs sans presse-papiers asynchrone (contexte non sécurisé, vieux Safari)
+  Array.prototype.forEach.call(document.querySelectorAll('.copier'), function(b){
+    b.addEventListener('click', function(){
+      var txt = document.getElementById(b.dataset.cible).textContent.trim();
+      var fini = function(){
+        b.textContent = b.dataset.fait; b.dataset.ok='1';
+        setTimeout(function(){ b.textContent=b.dataset.libelle; b.removeAttribute('data-ok'); }, 2200);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(txt).then(fini, replique);
+      } else { replique(); }
+      function replique(){
+        var z=document.createElement('textarea');
+        z.value=txt; z.setAttribute('readonly',''); z.style.position='fixed'; z.style.opacity='0';
+        document.body.appendChild(z); z.select();
+        try { document.execCommand('copy'); fini(); } catch(e) { /* l'adresse reste sélectionnable à la main */ }
+        document.body.removeChild(z);
+      }
+    });
+  });
+
+  // Langue : anglais si le navigateur n'est pas francophone
+  var fr=document.getElementById('fr'), en=document.getElementById('en');
+  var bfr=document.getElementById('btn-fr'), ben=document.getElementById('btn-en');
+  function bascule(vers){
+    var estFr = (vers==='fr');
+    fr.hidden=!estFr; en.hidden=estFr;
+    bfr.setAttribute('aria-pressed', String(estFr));
+    ben.setAttribute('aria-pressed', String(!estFr));
+    document.documentElement.lang = vers;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-fr]'), function(el){
+      el.textContent = estFr ? el.dataset.fr : el.dataset.en;
+    });
+  }
+  bfr.addEventListener('click', function(){ bascule('fr'); });
+  ben.addEventListener('click', function(){ bascule('en'); });
+  if ((navigator.language||'fr').toLowerCase().slice(0,2) !== 'fr') { bascule('en'); }
+})();
+</script>
+</body>
+</html>
