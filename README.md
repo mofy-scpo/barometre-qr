@@ -39,3 +39,9 @@ URL obtenue : `https://<compte>.github.io/barometre-qr/`
 1. **Hébergement définitif** — GitHub Pages est un domaine tiers ; pour une sollicitation institutionnelle, un domaine `sciencespo.fr` (ou `sites.google.com/sciencespo.fr/…`) inspire davantage confiance et résiste mieux au réflexe « c'est du phishing ». À arbitrer avant l'impression.
 2. **Repli papier** — imprimer l'adresse en toutes lettres sur le support, sous le QR : si la page est inaccessible, le dispositif reste utilisable.
 3. **Mesure d'usage** — la page ne trace rien ; le volume réel se lit dans l'onglet `logs` du classeur de mapping.
+
+## Prototype en ligne (25/08/2026)
+
+- **URL** : https://mofy-scpo.github.io/barometre-qr/
+- **QR** : `qr-barometre.png` (600 px, correction M) — pointe vers cette URL
+- Statut : **prototype de démonstration**. Hébergement définitif à rebasculer sur un domaine institutionnel (Google Sites `sites.google.com/sciencespo.fr/…` ou page `sciencespo.fr`) **avant impression** des supports : un QR institutionnel qui atterrit sur `github.io` se lit comme du phishing.
